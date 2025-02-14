@@ -35,6 +35,10 @@ body {
   /* border: 1px solid var(--border-primary); */
 }
 
+.sub-footer {
+  box-shadow: var(--shadow-primary);
+}
+
 .chatbot-header {
   border-bottom: 1px solid var(--border-primary);;
 }

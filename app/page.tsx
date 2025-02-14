@@ -29,8 +29,8 @@ export default function Home() {
   };
 
   return (
-    <main className="flex h-screen flex-col items-center justify-center">
-      <section className='chatbot-section flex flex-col origin:w-[800px] w-full md:h-[735px] h-full rounded-md px-2 md:px-6 md:py-4'>
+    <main className="flex h-screen flex-col items-center justify-center py-4">
+      <section className='chatbot-section flex flex-col origin:w-[800px] w-full md:h-[735px] h-full rounded-md px-2 md:px-6 md:py-4 z-10'>
         {!messages || messages.length === 0 ? (
           <div className='h-full flex flex-col items-center'>
             <Image src={tswiftImg} width="250" height="75" alt="Swiftie GPT logo" />
@@ -41,6 +41,10 @@ export default function Home() {
                 For Swifties, by Swifties.
               </p>
               <PromptSuggestionRow onPromptClick={handlePrompt} />
+
+              <p className="chatbot-text-secondary-inverse text-lg text-center mt-2 md:mt-4 px-2">
+                Or chat to this bot on the phone at <a href="tel:+18556879438" className="link">8556 TSWIFT</a><br></br> (that&lsquo;s (855) 687-9438)
+              </p>
             </div>
           </div>
         ): (
@@ -73,6 +77,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="sub-footer w-full max-w-[740px] bg-white pt-4 pb-4 text-center px-2 rounded-b-md">
+        <p className="text-gray-800 text-sm">
+          Want to learn how to build this chatbot? Check out the{" "}
+          <a 
+            href="https://www.datastax.com/blog/using-astradb-vector-to-build-taylor-swift-chatbot" 
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            tutorial on the DataStax blog
+          </a>.
+        </p>
+      </div>
     </main>
   )
 }

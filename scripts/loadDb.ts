@@ -16,13 +16,12 @@ const taylorData = [
   'https://time.com/6342806/person-of-the-year-2023-taylor-swift/',
   'https://en.wikipedia.org/wiki/Taylor_Swift',
   'https://en.wikipedia.org/wiki/Taylor_Swift_albums_discography',
-  'https://www.taylorswift.com/tour/',
+  'https://en.wikipedia.org/wiki/Taylor_Swift_Productions',
   'https://taylorswift.tumblr.com/',
   'https://www.forbes.com/profile/taylor-swift/?sh=242c42f818e2',
   'https://taylorswiftstyle.com/',
   'https://www.tstheerastourfilm.com/participating-territories/',
   'https://www.cosmopolitan.com/entertainment/celebs/a29684699/taylor-swift-dating-boyfriend-history/E',
-  'https://www.tstheerastourfilm.com/participating-territories/',
   'https://en.wikipedia.org/wiki/The_Eras_Tour',
   'https://taylorswift.fandom.com/wiki/The_Eras_Tour',
 ];
@@ -44,7 +43,7 @@ const createCollection = async (similarityMetric: SimilarityMetric = 'dot_produc
   console.log(res);
 };
 
-const loadSampleData = async (similarityMetric: SimilarityMetric = 'dot_product') => {
+const loadSampleData = async () => {
   const collection = await astraDb.collection(ASTRA_DB_COLLECTION);
   for await (const url of taylorData) {
     console.log(`Processing url ${url}`);
